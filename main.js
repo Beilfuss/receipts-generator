@@ -46,13 +46,29 @@ function gerar_recibos() {
         div2.appendChild(div4);
 
         let p3 = document.createElement('p');
-        let p3Text = document.createTextNode('Valor: R$ '+valor);
+        let p3Text = document.createTextNode('Valor: ');
         p3.appendChild(p3Text);
+        let b1 = document.createElement('b');
+        let b1Text = document.createTextNode('R$ '+valor);
+        b1.appendChild(b1Text);
+        p3.appendChild(b1);
         div4.appendChild(p3);
 
         let p4 = document.createElement('p');
-        let p4Text = document.createTextNode('Recebemos de '+nome+' a quantia de '+valorExtenso+'.');
-        p4.appendChild(p4Text);
+        let p4Text1 = document.createTextNode('Recebemos de ');
+        p4.appendChild(p4Text1);
+        let b2 = document.createElement('b');
+        let b2Text = document.createTextNode(nome);
+        b2.appendChild(b2Text);
+        p4.appendChild(b2);
+        let p4Text2 = document.createTextNode(' a quantia de ');
+        p4.appendChild(p4Text2);
+        let b3 = document.createElement('b');
+        let b3Text = document.createTextNode(valorExtenso);
+        b3.appendChild(b3Text);
+        p4.appendChild(b3);
+        let p4Text3 = document.createTextNode('.');
+        p4.appendChild(p4Text3)
         div4.appendChild(p4);
 
         let p5 = document.createElement('p');
@@ -60,13 +76,13 @@ function gerar_recibos() {
         p5.appendChild(p5Text);
         div4.appendChild(p5);
 
-        let p6 = document.createElement('p');
+        let p6 = document.createElement('b');
         let p6Text = document.createTextNode(datas[i][0]+' a '+datas[i][1]+'.');
         p6.appendChild(p6Text);
         div4.appendChild(p6)
 
         let p7 = document.createElement('p');
-        let p7Text = document.createTextNode('Brusque, ____/____/____.');
+        let p7Text = document.createTextNode('Brusque, ____/____/'+(datas[i][0]).slice(6,10)+'.');
         p7.appendChild(p7Text);
         div4.append(p7);
 
@@ -90,13 +106,42 @@ function gerar_recibos() {
 
         let p9 = document.createElement('p');
         p9.classList.add('rightValue');
-        let p9Text = document.createTextNode('VALOR: R$ '+valor);
+        let p9Text = document.createTextNode('VALOR: ');
         p9.appendChild(p9Text);
+        let b4 = document.createElement('b');
+        b4.classList.add('rightValueBold');
+        let b4Text = document.createTextNode('R$ '+valor);
+        b4.appendChild(b4Text);
+        p9.appendChild(b4);
         div7.appendChild(p9);
 
         let p10 = document.createElement('p');
-        let p10Text = document.createTextNode('Recebemos de '+nome+' a quantia de '+valorExtenso+', referente ao aluguel de galpão nº '+numeroGalpao+' conforme contrato lavrado em cartório. Aluguel correspondente aos dias de '+datas[i][0]+' a '+datas[i][1]+', e para clareza firmamos o presente.');
-        p10.appendChild(p10Text);
+        let p10Text1 = document.createTextNode('Recebemos de ');
+        p10.appendChild(p10Text1);
+        let b5 = document.createElement('b');
+        let b5Text = document.createTextNode(nome);
+        b5.appendChild(b5Text);
+        p10.appendChild(b5);
+        let p10Text2 = document.createTextNode(' a quantia de ');
+        p10.appendChild(p10Text2);
+        let b6 = document.createElement('b');
+        let b6Text = document.createTextNode(valorExtenso);
+        b6.appendChild(b6Text);
+        p10.appendChild(b6);
+        let p10Text3 = document.createTextNode(', referente ao aluguel de ');
+        p10.appendChild(p10Text3);
+        let b7 = document.createElement('b');
+        let b7Text = document.createTextNode('galpão nº '+numeroGalpao);
+        b7.appendChild(b7Text);
+        p10.appendChild(b7);
+        let p10Text4 = document.createTextNode(' conforme contrato lavrado em cartório. Aluguel correspondente aos dias de ');
+        p10.appendChild(p10Text4);
+        let b8 = document.createElement('b');
+        let b8Text = document.createTextNode(datas[i][0]+' a '+datas[i][1]);
+        b8.appendChild(b8Text);
+        p10.appendChild(b8);
+        let p10Text5 = document.createTextNode(', e para clareza firmamos o presente.');
+        p10.appendChild(p10Text5);
         div6.appendChild(p10);
 
         let p11 = document.createElement('p');
