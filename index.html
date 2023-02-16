@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Boletos</title>
+
+    <script src="main.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1>Gerador de Recibos</h1>
+
+        <p id="descricao">Preencha os campos abaixo:</p>
+
+        <form id="formulario">
+            <div class="formInputs" id="numIdDiv">
+                <label for="numId">Primeiro número identificador do recibo:</label>
+                <input type="text" id="numId">
+            </div>
+            <div class="formInputs" id="valorDiv">
+                <label for="valor">Valor do aluguel:</label>
+                <input type="text" id="valor">
+            </div>
+            <div class="formInputs" id="valorExtensoDiv">
+                <label for="valorExtenso">Valor por extenso:</label>
+                <input type="text" id="valorExtenso">
+            </div>
+            <div class="formInputs" id="nomeDiv">
+                <label for="nome">Nome do pagante:</label>
+                <input type="text" id="nome">
+            </div>
+            <div class="formInputs" id="dataInicialDiv">
+                <label for="dataInicial">Data inicial:</label>
+                <input type="date" id="dataInicial">
+            </div>
+            <div class="formInputs" id="numeroGalpaoDiv">
+                <label for="numeroGalpao">Número do Galpão:</label>
+                <input type="number" id="numeroGalpao">
+            </div>
+            <input type="button" name="" id="botao" value="Gerar Recibos" onclick="gerar_recibos()">
+        </form>
+    </header>
+
+    <!-- Idealização do Recibo
+
+    <div class="allParts">
+
+        Primeira parte
+
+        <div class="firstPart">
+            <div class="identifiers">
+                <p class="receiptId">53</p>
+                <p class="receiptNumberLeft">RECIBO N° 01</p>
+            </div>
+            
+            <div class="leftData">
+                <p>Valor: R$ 2.730,00</p>
+                <p>Recebemos de RODRIGO BRANDT Eireli, a   quantia de Dois mil, setecentos e trinta reais.</p>
+                <p>Aluguel referente aos dias:</p>
+                <p>01/09/2022 à 30/09/2022.</p>
+                <p>Brusque, ____/____/____.</p>
+            </div>
+           
+        </div>
+    
+        Segunda parte
+        <div class="secondPart">
+            <div class="rightData">
+                <div class="receiptAndValue">
+                    <p class="receiptNumberRight">RECIBO N° 01</p>
+                    <p class="rightValue">VALOR: R$ 2.730,00</p>
+                </div>
+                <p>Recebemos de RODRIGO BRANDT EIRELI. a quantia de Dois mil setecentos e trinta reais, referente ao aluguel de galpão nº35 conforme contrato lavrado em cartório. Aluguel correspondente aos dias de 01/09/2022 à 30/09/2022, e para clareza firmamos o presente.</p>
+                <p>Brusque, ______ de _____________________________ de 2022</p>
+                <p>Assinatura do Locatário: ___________________________</p>
+            </div>
+        </div>
+    </div>
+    
+    -->   
+
+</body>
+</html>
