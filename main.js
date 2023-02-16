@@ -115,6 +115,7 @@ function gerar_datas(dataInicial) {
 
     let ano = parseInt(dataInicial.slice(0,5));
     let mes = parseInt(dataInicial.slice(5,7));
+    let dia = parseInt(dataInicial.slice(8,10))
 
     let datas = []
 
@@ -122,26 +123,81 @@ function gerar_datas(dataInicial) {
         return new Date(ano, mes, 0).getDate();
     }
 
-    for (let i = 0; i < 12; i++) {
+    if (dia == 1) {
 
-        let totalDays = getDays(ano, mes);
+        console.log('PRIMEIRO')
 
-        let data1 = `01/${mes}/${ano}`;
-        let data2 = `${totalDays}/${mes}/${ano}`;
+        for (let i = 0; i < 12; i++) {
 
-        if (mes < 10) {
-            data1 = `01/0${mes}/${ano}`
-            data2 = `${totalDays}/0${mes}/${ano}`;
+            let totalDays = getDays(ano, mes);
+    
+            let data1 = `01/${mes}/${ano}`;
+            let data2 = `${totalDays}/${mes}/${ano}`;
+    
+            if (mes < 10) {
+                data1 = `01/0${mes}/${ano}`;
+                data2 = `${totalDays}/0${mes}/${ano}`;
+            }
+    
+            datas.push([data1, data2]);
+    
+            mes = mes+1;
+    
+            if (mes == 13) {
+                mes = mes-12
+                ano = ano + 1
+            };
         }
+    } else {
 
-        datas.push([data1, data2]);
+        console.log('SEGUNDO')
 
-        mes = mes+1;
+        for (let i = 0; i < 12; i++) {
 
-        if (mes == 12) {
-            mes = mes-11
-            ano = ano + 1
-        };
+            if (mes == 13) {
+                mes = mes-12
+                ano = ano+1
+            };
+
+            let data1 = `${dia}/${mes}/${ano}`;
+            let data2 = `${dia}/${mes+1}/${ano}`;        
+
+            if (mes == 12) {
+                data2 = `${dia}/0${mes-11}/${ano+1}`;
+                if (data2.length == 9) {
+                    data2 = `0${dia}/0${mes-11}/${ano+1}`;
+                }    
+            }
+
+            if (data1.length == 8) {
+                data1 = `0${dia}/0${mes}/${ano}`;
+            }
+
+            if (data2.length == 8) {
+                data2 = `0${dia}/0${mes+1}/${ano}`;
+            }
+
+            if (data1.length == 9) {
+                if (dia < 10) {
+                    data1 = `0${dia}/${mes}/${ano}`;
+                } else if (mes < 10) {
+                    data1 = `${dia}/0${mes}/${ano}`;
+                }
+            }
+
+            if (data2.length == 9) {
+                if ((dia+1) < 10) {
+                    data2 = `0${dia}/${mes+1}/${ano}`;
+                } else if ((mes+1) < 10) {
+                    data2 = `${dia}/0${mes+1}/${ano}`;
+                }
+            }
+
+            datas.push([data1, data2]);
+    
+            mes = mes+1;
+        }
     }
+    console.log(datas)
     return datas
 }
