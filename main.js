@@ -166,8 +166,11 @@ function gerar_recibos() {
 
     let div8 = document.createElement('div');
     div8.setAttribute("id", "cover");
-
     document.body.appendChild(div8);
+
+    let div8_1 = document.createElement('div');
+    div8_1.setAttribute("id", "topStripe");
+    div8.appendChild(div8_1);
 
     let div9 = document.createElement('div');
     div9.setAttribute("id", "buildingData");
@@ -248,15 +251,42 @@ function gerar_recibos() {
     p21.appendChild(p21Text);
     div13.appendChild(p21);
 
+    let div14 = document.createElement('div');
+    div14.setAttribute("id", "bottomStripe");
+    div8.appendChild(div14);
+
     let newStyleSheet = document.createElement("style");
     let stl1 = document.createTextNode(`#cover {
         background-color: ${corCapa};
     }`);
     newStyleSheet.appendChild(stl1);
+
     let stl2 = document.createTextNode(`#companyName {
         text-decoration-color: ${corSublinhado};
     }`);
     newStyleSheet.appendChild(stl2);
+
+    if (nomeSegundoDono === "" && nomeTerceiroDono === "") {
+        let stl3 = document.createTextNode(`
+        #companyName {
+            margin: 45px 0px 52px 0px;
+        }
+        #firstOwnerName {
+            margin: 0px 20px 57px 0px;
+        }
+        #firstOwnerPhone {
+            margin: 0px 50px 57px 0px;
+        }`);
+        newStyleSheet.appendChild(stl3);
+    } else if (nomeTerceiroDono === "") {
+        let stl4 = document.createTextNode(`#secondOwnerName {
+            margin: 0px 20px 47px 0px;
+        }
+        #secondOwnerPhone {
+            margin: 0px 50px 47px 0px;
+        }`);
+        newStyleSheet.appendChild(stl4);
+    }
     
     let head = document.getElementsByTagName('head')[0];
     head.appendChild(newStyleSheet);
