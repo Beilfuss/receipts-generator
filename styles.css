@@ -36,6 +36,14 @@ label {
     width: 175px;
 }
 
+#corCapa {
+    width: 180px;
+}
+
+#corSublinhado {
+    width: 180px;
+}
+
 .formInputs {
     margin: 15px 3cm 15px 0px;
 }
@@ -43,7 +51,7 @@ label {
 /* Boletos */
 
 #third {
-    margin: 0 0 26px 0;
+    margin: 0 0 40px 0;
 }
 
 .threeGroup {
@@ -125,11 +133,92 @@ label {
 
 .rightValue {
     display: flex;
-    width: 6cm;
+    justify-content: end;
+    width: 6.5cm;
     font-size: 20px;
     margin: 15px 0px 0.5cm 0px;
 }
 
 .rightValueBold {
     margin: 0 0 0 4px;
+}
+
+/* Capa */
+
+#cover {
+    height: 9cm;
+    width: 727px;
+    margin: 40px auto 0px auto;
+    -webkit-print-color-adjust: exact;
+}
+
+#buildingData {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+}
+
+#buildingNumberDescription {
+    margin: 40px 0px 0px 10px;
+}
+
+#buildingNumber {
+    margin: 40px 50px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#companyName {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin: 45px 0px 45px 0px;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+
+#ownersData {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+#firstOwnerData {
+    display: flex;
+    justify-content: end;
+}
+
+#firstOwnerPhone {
+    margin: 0px 50px 15px 0px;
+}
+
+#firstOwnerName {
+    margin: 0px 20px 15px 0px;
+}
+
+#secondOwnerData {
+    display: flex;
+    justify-content: end;
+}
+
+#secondOwnerPhone {
+    margin: 0px 50px 15px 0px;
+}
+
+#secondOwnerName {
+    margin: 0px 20px 15px 0px;
+}
+
+#thirdOwnerData {
+    display: flex;
+    justify-content: end;
+}
+
+#thirdOwnerPhone {
+    margin: 0px 50px 15px 0px;
+}
+
+#thirdOwnerName {
+    margin: 0px 20px 15px 0px;
 }

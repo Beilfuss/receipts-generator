@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Boletos</title>
+    <title>Gerador de Recibos</title>
 
     <script src="main.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -19,28 +19,64 @@
 
         <form id="formulario">
             <div class="formInputs" id="numIdDiv">
-                <label for="numId">Primeiro número identificador do recibo:</label>
-                <input type="text" id="numId">
+                <label for="numId">Número identificador do recibo:</label>
+                <input type="text" id="numId" onkeydown="focusNext(event, 'valor')">
             </div>
             <div class="formInputs" id="valorDiv">
                 <label for="valor">Valor do aluguel:</label>
-                <input type="text" id="valor">
+                <input type="text" id="valor" onkeydown="focusNext(event, 'valorExtenso')">
             </div>
             <div class="formInputs" id="valorExtensoDiv">
                 <label for="valorExtenso">Valor por extenso:</label>
-                <input type="text" id="valorExtenso">
+                <input type="text" id="valorExtenso" onkeydown="focusNext(event, 'nome')">
             </div>
             <div class="formInputs" id="nomeDiv">
                 <label for="nome">Nome do pagante:</label>
-                <input type="text" id="nome">
+                <input type="text" id="nome" onkeydown="focusNext(event, 'dataInicial')">
             </div>
             <div class="formInputs" id="dataInicialDiv">
                 <label for="dataInicial">Data inicial:</label>
-                <input type="date" id="dataInicial">
+                <input type="date" id="dataInicial" onkeydown="focusNext(event, 'numeroGalpao')">
             </div>
             <div class="formInputs" id="numeroGalpaoDiv">
                 <label for="numeroGalpao">Número do Galpão:</label>
-                <input type="number" id="numeroGalpao">
+                <input type="text" id="numeroGalpao" onkeydown="focusNext(event, 'nomeEmpresa')">
+            </div>
+            <div class="formInputs" id="nomeEmpresaDiv">
+                <label for="nomeEmpresa">Nome da empresa:</label>
+                <input type="text" id="nomeEmpresa" onkeydown="focusNext(event, 'nomePrimeiroDono')">
+            </div>
+            <div class="formInputs" id="primeroDonoDiv">
+                <label for="nomePrimeiroDono">Primeiro nome (capa):</label>
+                <input type="text" id="nomePrimeiroDono" onkeydown="focusNext(event, 'telefonePrimeiroDono')">
+            </div>
+            <div class="formInputs" id="primeiroTelefoneDiv">
+                <label for="telefonePrimeiroDono">Primeiro telefone (capa):</label>
+                <input type="text" id="telefonePrimeiroDono" onkeydown="focusNext(event, 'nomeSegundoDono')">
+            </div>
+            <div class="formInputs" id="segundoDonoDiv">
+                <label for="nomeSegundoDono">Segundo nome (capa):</label>
+                <input type="text" id="nomeSegundoDono" onkeydown="focusNext(event, 'telefoneSegundoDono')">
+            </div>
+            <div class="formInputs" id="segundoTelefoneDiv">
+                <label for="telefoneSegundoDono">Primeiro telefone (capa):</label>
+                <input type="text" id="telefoneSegundoDono" onkeydown="focusNext(event, 'nomeTerceiroDono')">
+            </div>
+            <div class="formInputs" id="terceiroDonoDiv">
+                <label for="nomeTerceiroDono">Terceiro nome (capa):</label>
+                <input type="text" id="nomeTerceiroDono" onkeydown="focusNext(event, 'telefoneTerceiroDono')">
+            </div>
+            <div class="formInputs" id="terceiroTelefoneDiv">
+                <label for="telefoneTerceiroDono">Primeiro telefone (capa):</label>
+                <input type="text" id="telefoneTerceiroDono" onkeydown="focusNext(event, 'corCapa')">
+            </div>
+            <div class="formInputs" id="corCapaDiv">
+                <label for="corCapa">Cor de fundo da capa:</label>
+                <input type="color" id="corCapa" onkeydown="focusNext(event, 'corSublinhado')">
+            </div>
+            <div class="formInputs" id="corCapaDiv">
+                <label for="corSublinhado">Cor do sublinhado:</label>
+                <input type="color" id="corSublinhado" onkeydown="focusNext(event, 'botao')">
             </div>
             <input type="button" name="" id="botao" value="Gerar Recibos" onclick="gerar_recibos()">
         </form>

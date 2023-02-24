@@ -6,6 +6,15 @@ function gerar_recibos() {
     let nome = document.getElementById("nome").value;
     let dataInicial = document.getElementById("dataInicial").value;
     let numeroGalpao = document.getElementById("numeroGalpao").value;
+    let nomeEmpresa = document.getElementById("nomeEmpresa").value;
+    let nomePrimeiroDono = document.getElementById("nomePrimeiroDono").value;
+    let telefonePrimeiroDono = document.getElementById("telefonePrimeiroDono").value;
+    let nomeSegundoDono = document.getElementById("nomeSegundoDono").value;
+    let telefoneSegundoDono = document.getElementById("telefoneSegundoDono").value;
+    let nomeTerceiroDono = document.getElementById("nomeTerceiroDono").value;
+    let telefoneTerceiroDono = document.getElementById("telefoneTerceiroDono").value;
+    let corCapa = document.getElementById("corCapa").value;
+    let corSublinhado = document.getElementById("corSublinhado").value;
 
     let datas = gerar_datas(dataInicial)
 
@@ -152,8 +161,105 @@ function gerar_recibos() {
         let p12 = document.createElement('p');
         let p12Text = document.createTextNode('Assinatura do Locatário: __________________________________.');
         p12.appendChild(p12Text);
-        div6.appendChild(p12);
+        div6.appendChild(p12);        
     }
+
+    let div8 = document.createElement('div');
+    div8.setAttribute("id", "cover");
+
+    document.body.appendChild(div8);
+
+    let div9 = document.createElement('div');
+    div9.setAttribute("id", "buildingData");
+    div8.appendChild(div9);
+
+    let p13 = document.createElement('p');
+    p13.setAttribute("id", "buildingNumberDescription");
+    let b9 = document.createElement('b');
+    let b9Text = document.createTextNode('Galpão N°');
+    b9.appendChild(b9Text);
+    p13.appendChild(b9);
+    div9.appendChild(p13);
+    let p14 = document.createElement('p');
+    p14.setAttribute("id", "buildingNumber");
+    let b10 = document.createElement('b');
+    let b10Text = document.createTextNode(numeroGalpao);
+    b10.appendChild(b10Text);
+    p14.appendChild(b10);
+    div9.appendChild(p14);
+
+    let p15 = document.createElement('p');
+    p15.setAttribute("id", "companyName");
+    let b11 = document.createElement('b');
+    p15.appendChild(b11);
+    let b11Text = document.createTextNode(nomeEmpresa);
+    b11.appendChild(b11Text);
+    div8.appendChild(p15);
+
+    let div10 = document.createElement('div');
+    div10.setAttribute("id", "ownersData");
+    div8.appendChild(div10);
+
+    let div11 = document.createElement('div');
+    div11.setAttribute("id", "firstOwnerData");
+    div10.appendChild(div11);
+
+    let p16 = document.createElement('p');
+    p16.setAttribute("id", "firstOwnerName");
+    let p16Text = document.createTextNode(nomePrimeiroDono);
+    p16.appendChild(p16Text);
+    div11.appendChild(p16);
+
+    let p17 = document.createElement('p');
+    p17.setAttribute("id", "firstOwnerPhone");
+    let p17Text = document.createTextNode(telefonePrimeiroDono);
+    p17.appendChild(p17Text);
+    div11.appendChild(p17);
+
+    let div12 = document.createElement('div');
+    div12.setAttribute("id", "secondOwnerData");
+    div10.appendChild(div12);
+
+    let p18 = document.createElement('p');
+    p18.setAttribute("id", "secondOwnerName");
+    let p18Text = document.createTextNode(nomeSegundoDono);
+    p18.appendChild(p18Text);
+    div12.appendChild(p18);
+
+    let p19 = document.createElement('p');
+    p19.setAttribute("id", "secondOwnerPhone");
+    let p19Text = document.createTextNode(telefoneSegundoDono);
+    p19.appendChild(p19Text);
+    div12.appendChild(p19);
+
+    let div13 = document.createElement('div');
+    div13.setAttribute("id", "thirdOwnerData");
+    div10.appendChild(div13);
+
+    let p20 = document.createElement('p');
+    p20.setAttribute("id", "thirdOwnerName");
+    let p20Text = document.createTextNode(nomeTerceiroDono);
+    p20.appendChild(p20Text);
+    div13.appendChild(p20);
+
+    let p21 = document.createElement('p');
+    p21.setAttribute("id", "thirdOwnerPhone");
+    let p21Text = document.createTextNode(telefoneTerceiroDono);
+    p21.appendChild(p21Text);
+    div13.appendChild(p21);
+
+    let newStyleSheet = document.createElement("style");
+    let stl1 = document.createTextNode(`#cover {
+        background-color: ${corCapa};
+    }`);
+    newStyleSheet.appendChild(stl1);
+    let stl2 = document.createTextNode(`#companyName {
+        text-decoration-color: ${corSublinhado};
+    }`);
+    newStyleSheet.appendChild(stl2);
+    
+    let head = document.getElementsByTagName('head')[0];
+    head.appendChild(newStyleSheet);
 }
 
 function gerar_datas(dataInicial) {
@@ -169,8 +275,6 @@ function gerar_datas(dataInicial) {
     }
 
     if (dia == 1) {
-
-        console.log('PRIMEIRO')
 
         for (let i = 0; i < 12; i++) {
 
@@ -194,8 +298,6 @@ function gerar_datas(dataInicial) {
             };
         }
     } else {
-
-        console.log('SEGUNDO')
 
         for (let i = 0; i < 12; i++) {
 
@@ -243,6 +345,11 @@ function gerar_datas(dataInicial) {
             mes = mes+1;
         }
     }
-    console.log(datas)
     return datas
 }
+
+function focusNext(e, nextElementId) {
+    if (e.keyCode === 13) { // Enter
+      document.querySelector('#' + nextElementId).focus();
+    }
+  }
