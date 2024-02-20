@@ -376,17 +376,17 @@ function getFormData(form) {
     return data;
 };
 
-const form = document.querySelector('.receipt-data-form');
+function focusNext(e, nextElementId) {
+    if (e.keyCode === 13) { // Enter
+      document.querySelector('#' + nextElementId).focus();
+    }
+}
 
-form.addEventListener('submit', function (e) { 
-    e.preventDefault();
-    main();
-});   
+const form = document.querySelector('.receipt-data-form');
 
 function main() {
 
     const data = getFormData(form);
-    console.log(data);
 
     hideApp();
 
