@@ -1,6 +1,6 @@
 # Receipts Generator
 
-A simple receipt generator for 12 month contracts, created to help a very special friend and to practice coding;
+A simple receipt generator for 12 month contracts, created to help a very special friend and to practice coding. You can try the system at [this link](https://receipts-generator-mb.netlify.app/).
 
 ## Further explanations
 
