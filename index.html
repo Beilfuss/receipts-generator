@@ -6,81 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Recibos</title>
 
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    
+    <section class="app-container">
+        
+        <header class="title-header">
+            <h1>Gerador de Recibos</h1>
+        </header>
+    
+        <form action="" class="receipt-data-form">
+            <fieldset class="receipt-data-form-fieldset">
+                <legend>Dados do recibo:</legend>
 
-    <header id="header">
-        <h1>Gerador de Recibos</h1>
+                <div class="form-group">
+                    <label for="receipt-number-id">Número identificador do recibo:</label>
+                    <input type="text" id="receipt-number-id" name="receipt-number-id" value="1">
+                </div>
+    
+                <div class="form-group">
+                    <label for="rent-value">Valor do aluguel:</label>
+                    <input type="text" id="rent-value" name="rent-value" value="3.600,00">
+                </div>
+    
+                <div class="form-group">
+                    <label for="written-rent-value">Valor por extenso:</label>
+                    <input type="text" id="written-rent-value" name="written-rent-value" value="Três mil e seiscentos reais">
+                </div>
 
-        <p id="descricao">Preencha os campos abaixo:</p>
+                <div class="form-group">                        
+                    <label for="payers-name">Nome do pagante:</label>
+                    <input type="text" id="payers-name" name="payers-name" value="Matheus Beilfuss">
+                </div>
 
-        <form id="formulario">
-            <div class="formInputs" id="numIdDiv">
-                <label for="numId">Número identificador do recibo:</label>
-                <input type="text" id="numId" onkeydown="focusNext(event, 'valor')">
-            </div>
-            <div class="formInputs" id="valorDiv">
-                <label for="valor">Valor do aluguel:</label>
-                <input type="text" id="valor" onkeydown="focusNext(event, 'valorExtenso')">
-            </div>
-            <div class="formInputs" id="valorExtensoDiv">
-                <label for="valorExtenso">Valor por extenso:</label>
-                <input type="text" id="valorExtenso" onkeydown="focusNext(event, 'nome')">
-            </div>
-            <div class="formInputs" id="nomeDiv">
-                <label for="nome">Nome do pagante:</label>
-                <input type="text" id="nome" onkeydown="focusNext(event, 'dataInicial')">
-            </div>
-            <div class="formInputs" id="dataInicialDiv">
-                <label for="dataInicial">Data inicial:</label>
-                <input type="date" id="dataInicial" onkeydown="focusNext(event, 'numeroGalpao')">
-            </div>
-            <div class="formInputs" id="numeroGalpaoDiv">
-                <label for="numeroGalpao">Número do Galpão:</label>
-                <input type="text" id="numeroGalpao" onkeydown="focusNext(event, 'nomeEmpresa')">
-            </div>
-            <div class="formInputs" id="nomeEmpresaDiv">
-                <label for="nomeEmpresa">Nome da empresa:</label>
-                <input type="text" id="nomeEmpresa" onkeydown="focusNext(event, 'nomePrimeiroDono')">
-            </div>
-            <div class="formInputs" id="primeroDonoDiv">
-                <label for="nomePrimeiroDono">Primeiro nome (capa):</label>
-                <input type="text" id="nomePrimeiroDono" onkeydown="focusNext(event, 'telefonePrimeiroDono')">
-            </div>
-            <div class="formInputs" id="primeiroTelefoneDiv">
-                <label for="telefonePrimeiroDono">Primeiro telefone (capa):</label>
-                <input type="text" id="telefonePrimeiroDono" onkeydown="focusNext(event, 'nomeSegundoDono')">
-            </div>
-            <div class="formInputs" id="segundoDonoDiv">
-                <label for="nomeSegundoDono">Segundo nome (capa):</label>
-                <input type="text" id="nomeSegundoDono" onkeydown="focusNext(event, 'telefoneSegundoDono')">
-            </div>
-            <div class="formInputs" id="segundoTelefoneDiv">
-                <label for="telefoneSegundoDono">Segundo telefone (capa):</label>
-                <input type="text" id="telefoneSegundoDono" onkeydown="focusNext(event, 'nomeTerceiroDono')">
-            </div>
-            <div class="formInputs" id="terceiroDonoDiv">
-                <label for="nomeTerceiroDono">Terceiro nome (capa):</label>
-                <input type="text" id="nomeTerceiroDono" onkeydown="focusNext(event, 'telefoneTerceiroDono')">
-            </div>
-            <div class="formInputs" id="terceiroTelefoneDiv">
-                <label for="telefoneTerceiroDono">Terceiro telefone (capa):</label>
-                <input type="text" id="telefoneTerceiroDono" onkeydown="focusNext(event, 'corCapa')">
-            </div>
-            <div class="formInputs" id="corCapaDiv">
-                <label for="corCapa">Cor de fundo da capa:</label>
-                <input type="color" id="corCapa" onkeydown="focusNext(event, 'corSublinhado')">
-            </div>
-            <div class="formInputs" id="corCapaDiv">
-                <label for="corSublinhado">Cor do sublinhado:</label>
-                <input type="color" id="corSublinhado" onkeydown="focusNext(event, 'botao')">
-            </div>
-            <input type="button" name="" id="botao" value="Gerar Recibos" onclick="gerar_recibos()">
+                <div class="form-group">                    
+                    <label for="initial-date">Data inicial:</label>
+                    <input type="date" id="initial-date" name="initial-date" value="2025-01-01">
+                </div>
+
+                <div class="form-group">                    
+                    <label for="building-number">Número do Galpão:</label>
+                    <input type="text" id="building-number" name="building-number" value="14">
+                </div>
+
+                <div class="form-group">                    
+                    <label for="company-name">Nome da empresa:</label>
+                    <input type="text" id="company-name" name="company-name" value="Umbrella Corporation">
+                </div>
+                <div class="form-group">                    
+                    <label for="city-name">Cidade:</label>
+                    <input type="text" id="city-name" name="city-name" value="Brusque">
+                </div>
+            </fieldset>
+            
+            <fieldset class="receipt-data-cover-fieldset">
+                <legend>Dados da capa do recibo:</legend>
+
+                <div class="form-group">
+                    <label for="owners-name-1">Primeiro nome:</label>
+                    <input type="text" id="owner-name-1" name="owners-name-1" value="Johny Lucas Beilfuss">
+                </div>
+    
+                <div class="form-group">
+                    <label for="owners-phone-1">Primeiro telefone:</label>
+                    <input type="text" id="owners-phone-1" name="owners-phone-1" value="(47) 91234-1234">
+                </div>
+                
+                <div class="form-group">
+                    <label for="owners-name-2">Segundo nome:</label>
+                    <input type="text" id="owners-name-2" name="owners-name-2" value="Josiane M. N. Beilfuss">
+                </div>
+    
+                <div class="form-group">
+                    <label for="owners-phone-2">Segundo telefone:</label>
+                    <input type="text" id="owners-phone-2" name="owners-phone-2" value="(47) 91234-1234">
+                </div>
+        
+                <div class="form-group">
+                    <label for="owners-name-3">Terceiro nome:</label>
+                    <input type="text" id="owners-name-3" name="owners-name-3" value="Charles Beilfuss">
+                </div>
+        
+                <div class="form-group">
+                    <label for="owners-phone-3">Terceiro telefone:</label>
+                    <input type="text" id="owners-phone-3" name="owners-phone-3" value="(47) 91234-1234">
+                </div>
+        
+                <div class="form-group">
+                    <label for="cover-colour">Cor de fundo da capa:</label>
+                    <input type="color" id="cover-colour" name="cover-colour" value="#00ffff">
+                </div>
+        
+                <div class="form-group">
+                    <label for="underline-cover-colour">Cor do sublinhado:</label>
+                    <input type="color" id="underline-cover-colour" name="underline-cover-colour" value="#ff0000">
+                </div>
+            </fieldset>
+
+            <button type="submit" id="submit-button">Gerar recibos</button>
         </form>
-    </header>
+    
+    </section>
+
+    <section class="receipts-container"></section>
+
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
