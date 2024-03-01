@@ -60,6 +60,20 @@ body {
     display: none;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.back-button {
+    margin-right: 10px;
+}
+
+.print-button {
+    margin-left: 10px;
+}
+
 /* Receipts CSS */
 
 .receipt-container {

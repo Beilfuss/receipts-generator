@@ -1,3 +1,40 @@
+function printReceipts() {
+    const buttonsContainer = document.querySelector('.buttons-container');
+    buttonsContainer.classList.add('hide');
+    window.print();
+}
+
+function createPrintButton(buttonsContainer) {
+    const printButton = document.createElement('button');
+    printButton.classList.add('print-button');
+    const printButtonText = document.createTextNode('Imprimir');
+    printButton.appendChild(printButtonText);
+    printButton.setAttribute('onclick', 'printReceipts()');
+
+    buttonsContainer.appendChild(printButton);
+}
+
+function goBackToForm() {
+    const receiptsContainer = document.querySelector('.receipts-container');
+    receiptsContainer.innerHTML = '';
+
+    const buttonsContainer = document.querySelector('.buttons-container');
+    buttonsContainer.innerHTML = '';
+
+    const appContainer = document.querySelector('.app-container');
+    appContainer.classList.remove('hide');
+}
+
+function createBackButton(buttonsContainer) {
+    const backButton = document.createElement('button');
+    backButton.classList.add('back-button');
+    const backButtonText = document.createTextNode('Voltar');
+    backButton.appendChild(backButtonText);
+    backButton.setAttribute('onclick', 'goBackToForm()');
+
+    buttonsContainer.appendChild(backButton);
+}
+
 function createReceiptsCoverPayersData(data) {
 
     const receiptsCoverPayersData = document.createElement('div');
@@ -394,4 +431,8 @@ function main() {
     generateReceipts(receiptsContainer, data);
 
     generateCover(receiptsContainer, data);
+
+    const buttonsContainer = document.querySelector('.buttons-container');
+    createBackButton(buttonsContainer);
+    createPrintButton(buttonsContainer);
 }
