@@ -56,10 +56,6 @@ body {
     align-self: center;
 }
 
-.hide {
-    display: none;
-}
-
 .buttons-container {
     display: flex;
     justify-content: center;
@@ -72,6 +68,10 @@ body {
 
 .print-button {
     margin-left: 10px;
+}
+
+.hide {
+    display: none;
 }
 
 /* Receipts CSS */
