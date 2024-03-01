@@ -23,24 +23,14 @@ body {
 .receipt-data-form {
     display: flex;
     flex-direction: column;
-}
-
-.receipt-data-form-fieldset {
-    margin-bottom: 20px;
-}
-
-.receipt-data-cover-fieldset {
-    margin-bottom: 20px;
+    row-gap: 20px;
 }
 
 .form-group {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-}
-
-.form-group input {
-    margin-left: 8px;
+    column-gap: 8px;
 }
 
 #initial-date {
@@ -54,6 +44,7 @@ body {
 
 #submit-button {
     align-self: center;
+    margin-top: 20px;
 }
 
 .buttons-container {
