@@ -113,6 +113,14 @@ body {
     text-align: start;
 }
 
+.receipt-summary-value-text {
+    margin-bottom: 10px;
+}
+
+.receipt-summary-rent-text {
+    margin: 10px 0px 10px 0px;
+}
+
 .receipt-main {
     margin: 0px;
     width: 13cm;
