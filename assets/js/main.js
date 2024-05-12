@@ -1,6 +1,7 @@
 function printReceipts() {
     const buttonsContainer = document.querySelector('.buttons-container');
     buttonsContainer.classList.add('hide');
+    console.log(buttonsContainer);
     window.print();
 }
 
@@ -20,6 +21,9 @@ function goBackToForm() {
 
     const buttonsContainer = document.querySelector('.buttons-container');
     buttonsContainer.innerHTML = '';
+
+    const styleSheet = document.getElementById("stylesheet");
+    styleSheet.setAttribute("href", "./assets/css/form.css");
 
     const appContainer = document.querySelector('.app-container');
     appContainer.classList.remove('hide');
@@ -426,6 +430,9 @@ function main() {
     const data = getFormData(form);
 
     hideApp();
+
+    const styleSheet = document.getElementById("stylesheet");
+    styleSheet.setAttribute("href", "./assets/css/receipts.css");
 
     const receiptsContainer = document.querySelector('.receipts-container');
     generateReceipts(receiptsContainer, data);

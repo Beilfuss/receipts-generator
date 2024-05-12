@@ -5,68 +5,6 @@ body {
     font-size: 17px;
 }
 
-/* Form CSS */
-
-.app-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.title-header {
-    align-self: center;
-}
-
-.receipt-data-form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    column-gap: 8px;
-}
-
-#initial-date {
-    width: 175px;
-}
-
-#cover-colour,
-#underline-cover-colour {
-    width: 180px;
-}
-
-#submit-button {
-    align-self: center;
-    margin-top: 20px;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
-.back-button {
-    margin-right: 10px;
-}
-
-.print-button {
-    margin-left: 10px;
-}
-
-.hide {
-    display: none;
-}
-
-/* Receipts CSS */
-
 .receipt-container {
     display: flex;
     justify-content: center;
@@ -229,4 +167,50 @@ body {
 
 .owners-phone {
     margin: 0px 0px 0px 5px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.back-button {
+    margin: 20px 20px 20px 0;
+    font-size: 40px;
+    padding: 0 30px;
+    border: solid;
+    border-color: black;
+    border-width: 4px;
+    border-radius: 15px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.back-button:hover {
+    background: black;
+    color: white;
+}
+
+.print-button {
+    margin: 20px 0 20px 0;
+    font-size: 40px;
+    padding: 1.5rem 2rem;
+    border: solid;
+    border-color: black;
+    border-width: 4px;
+    border-radius: 15px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.print-button:hover {
+    background: black;
+    color: white;
+}
+
+.hide {
+    display: none;
 }
