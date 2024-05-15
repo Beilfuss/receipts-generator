@@ -415,7 +415,28 @@ function getFormData(form) {
     }
 
     return data;
-};
+}
+
+function formatMoneyValue() {
+    let rentValueInput = document.getElementById("rent-value");
+    let value = rentValueInput.value;
+
+    value = value.replace(/\D/g, "");
+    value = parseFloat(value / 100);
+
+    let formattedValue = value.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    if (formattedValue.indexOf(',') === -1) {
+        formattedValue += ',00';
+    } else if (formattedValue.split(',')[1].length < 2) {
+        formattedValue += '0';
+    }
+
+    rentValueInput.value = formattedValue;
+}
 
 function focusNext(e, nextElementId) {
     if (e.keyCode === 13) { // Enter
