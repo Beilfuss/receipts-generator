@@ -438,6 +438,17 @@ function formatMoneyValue() {
     rentValueInput.value = formattedValue;
 }
 
+function formatPhoneNumber(event) {
+    let phoneNumberInput = (event.target).value;
+    
+    if (!phoneNumberInput) (event.target).value = "";
+    phoneNumberInput = phoneNumberInput.replace(/\D/g,'');
+    phoneNumberInput = phoneNumberInput.replace(/(\d{2})(\d)/,"($1) $2");
+    phoneNumberInput = phoneNumberInput.replace(/(\d)(\d{4})$/,"$1-$2");
+    
+    (event.target).value = phoneNumberInput;
+}
+
 function focusNext(e, nextElementId) {
     if (e.keyCode === 13) { // Enter
       document.querySelector('#' + nextElementId).focus();

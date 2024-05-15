@@ -81,7 +81,7 @@
     
                 <div class="form-group">
                     <label for="owners-phone-1">Primeiro telefone</label>
-                    <input type="text" id="owners-phone-1" name="owners-phone-1" onkeydown="focusNext(event, 'owners-name-2')">
+                    <input type="tel" id="owners-phone-1" name="owners-phone-1" maxlength="15" onkeydown="focusNext(event, 'owners-name-2')" oninput="formatPhoneNumber(event)">
                 </div>
                 
                 <div class="form-group">
@@ -91,7 +91,7 @@
     
                 <div class="form-group">
                     <label for="owners-phone-2">Segundo telefone</label>
-                    <input type="text" id="owners-phone-2" name="owners-phone-2" onkeydown="focusNext(event, 'owners-name-3')">
+                    <input type="tel" id="owners-phone-2" name="owners-phone-2" maxlength="15" onkeydown="focusNext(event, 'owners-name-3')" oninput="formatPhoneNumber(event)">
                 </div>
         
                 <div class="form-group">
@@ -101,7 +101,7 @@
         
                 <div class="form-group">
                     <label for="owners-phone-3">Terceiro telefone</label>
-                    <input type="text" id="owners-phone-3" name="owners-phone-3" onkeydown="focusNext(event, 'cover-colour')">
+                    <input type="tel" id="owners-phone-3" name="owners-phone-3" maxlength="15" onkeydown="focusNext(event, 'cover-colour')" oninput="formatPhoneNumber(event)">
                 </div>
         
                 <div class="form-group">
