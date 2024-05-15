@@ -15,3 +15,10 @@ This friend of mine is a very tidy and organized guy, and he really likes to do 
 Thus, he would edit 12 receipts and the cover in MS Word, always changing the same fields. The purpose of this solution, then, is to speed up the creation of receipts, so that my friend could only enter the data he wants to change once.
 Initially, the idea of the solution is very simple: it creates the receipts using HTML tags and CSS and the way to print is using the browsers' printing tool. In view of this, it is worth mentioning that it was created and tested mainly on Chrome.
 Improvements are already being developed. Feel free to contribute, especially with ideas and suggestions!
+
+## To-do list
+
+- Fill in the "Value in words" field automatically according to the "Rent value" field;
+- Add verification in each field;
+- Add media queries;
+- Use a JS library to print PDFs so that the app works on smartphones.
