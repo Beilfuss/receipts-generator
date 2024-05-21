@@ -80,15 +80,12 @@ fieldset legend h2 {
     font-size: 2rem;
 }
 
-.receipt-data-cover-fieldset 
-.form-group:nth-last-child(-n+2) {
+.colour-group {
     display: flex;
     flex-direction: row;
 }
 
-.receipt-data-cover-fieldset 
-.form-group:nth-last-child(-n+2)
-label {
+.colour-group label {
     margin: 0;
     padding-top: 5px;
 }
@@ -131,4 +128,13 @@ input[type="color"]::-moz-color-swatch {
 #submit-button:hover {
     background: black;
     color: white;
+}
+
+.error-text {
+    font-size: 14px;
+    color: red;
+}
+
+.error-text-colour {
+    margin-left: 15px;
 }

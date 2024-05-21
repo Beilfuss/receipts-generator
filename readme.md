@@ -18,6 +18,5 @@ Improvements are already being developed. Feel free to contribute, especially wi
 
 ## To-do list
 
-- Add verification in each field;
 - Add media queries;
 - Use a JS library to print PDFs so that the app works on smartphones.

@@ -417,6 +417,56 @@ function getFormData(form) {
     return data;
 }
 
+function createError(field, message) {
+    const error = document.createElement('div');
+    error.innerHTML = message;
+    error.classList.add('error-text');
+
+    if (field.classList.contains('colour')) {
+        error.classList.add('error-text-colour');
+        const receiptDataCoverFieldset = document.querySelector('.receipt-data-cover-fieldset');
+        const lastChild = receiptDataCoverFieldset.lastElementChild;
+        lastChild.insertAdjacentElement('afterend', error);
+    } else {
+        field.insertAdjacentElement('afterend', error);
+    }
+}
+
+function validateData(){
+    let valid = true;
+
+    for(let errorText of form.querySelectorAll('.error-text')) {
+        errorText.remove();
+    }
+
+    for(let field of form.querySelectorAll('.required')) {
+        if (!field.value) {
+            createError(field, "Campo obrigatório");
+            valid = false;
+        }
+    }
+
+    for(let field of form.querySelectorAll('.validate')) {
+        if (field.classList.contains('string') && field.value !== "") {
+            if (!field.value.match(/^[a-zA-ZÀ-ÖØ-öø-ÿ\s]+$/g)) {
+                createError(field, "Campo precisa ser texto");
+                valid = false;
+            }
+        } else if (field.classList.contains('number') && field.value !== "") {
+            if (!field.value.match(/^[0-9]+$/g)) {
+                createError(field, "Campo precisa ser número");
+                valid = false;
+            }
+        } else if (field.classList.contains('colour')) {
+            if (field.value === "#000000") {
+                createError(field, "Campo obrigatório");
+                valid = false;
+            }
+        }
+    }
+    return valid;
+}
+
 String.prototype.extenso = function(c){ // Função para converter número no formato string para número por extenso
     var ex = [
         ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"],
@@ -493,19 +543,23 @@ const form = document.querySelector('.receipt-data-form');
 
 function main() {
 
-    const data = getFormData(form);
+    const valid = validateData();
 
-    hideApp();
-
-    const styleSheet = document.getElementById("stylesheet");
-    styleSheet.setAttribute("href", "./assets/css/receipts.css");
-
-    const receiptsContainer = document.querySelector('.receipts-container');
-    generateReceipts(receiptsContainer, data);
-
-    generateCover(receiptsContainer, data);
-
-    const buttonsContainer = document.querySelector('.buttons-container');
-    createBackButton(buttonsContainer);
-    createPrintButton(buttonsContainer);
+    if (valid) {
+        const data = getFormData(form);
+    
+        hideApp();
+    
+        const styleSheet = document.getElementById("stylesheet");
+        styleSheet.setAttribute("href", "./assets/css/receipts.css");
+    
+        const receiptsContainer = document.querySelector('.receipts-container');
+        generateReceipts(receiptsContainer, data);
+    
+        generateCover(receiptsContainer, data);
+    
+        const buttonsContainer = document.querySelector('.buttons-container');
+        createBackButton(buttonsContainer);
+        createPrintButton(buttonsContainer);    
+    }
 }
