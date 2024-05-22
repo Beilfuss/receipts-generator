@@ -173,6 +173,7 @@ input[type="color"]::-moz-color-swatch {
 
     .receipt-data-form {
         width: 90%;
+        overflow: auto;
         row-gap: 1.5rem;
         padding: 1rem;
     }
