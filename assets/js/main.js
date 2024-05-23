@@ -448,7 +448,7 @@ function validateData(){
 
     for(let field of form.querySelectorAll('.validate')) {
         if (field.classList.contains('string') && field.value !== "") {
-            if (!field.value.match(/^[a-zA-ZÀ-ÖØ-öø-ÿ\s]+$/g)) {
+            if (!field.value.match(/^[a-zA-ZÀ-ÖØ-öø-ÿ\s,.]+$/g)) {
                 createError(field, "Campo precisa ser texto");
                 valid = false;
             }

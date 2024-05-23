@@ -136,7 +136,7 @@ input[type="color"]::-moz-color-swatch {
 }
 
 .error-text-colour {
-    margin-left: 1.5px;
+    margin-left: 1.5rem;
 }
 
 @media (max-width: 1050px) {
