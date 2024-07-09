@@ -18,4 +18,5 @@ Improvements are already being developed. Feel free to contribute, especially wi
 
 ## To-do list
 
+- Make it possible to create a specific quantity of receipts;
 - Use a JS library to print PDFs so that the app works on smartphones.
