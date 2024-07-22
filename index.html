@@ -31,42 +31,42 @@
 
                 <div class="form-group">
                     <label for="receipt-number-id">Número identificador do recibo</label>
-                    <input type="text" id="receipt-number-id" class="validate required number" name="receipt-number-id" onkeydown="focusNext(event, 'building-number')">
+                    <input type="text" id="receipt-number-id" class="validate required number" name="receipt-number-id" value="10">
                 </div>
 
                 <div class="form-group">                    
                     <label for="building-number">Número do Galpão</label>
-                    <input type="text" id="building-number" class="validate required" name="building-number" onkeydown="focusNext(event, 'rent-value')">
+                    <input type="text" id="building-number" class="validate required" name="building-number" value="10">
                 </div>
     
                 <div class="form-group">
                     <label for="rent-value">Valor do aluguel</label>
-                    <input type="text" id="rent-value" class="required" name="rent-value" onkeydown="focusNext(event, 'written-rent-value')" oninput="formatMoneyValue()">
+                    <input type="text" id="rent-value" class="required" name="rent-value">
                 </div>
     
                 <div class="form-group">
                     <label for="written-rent-value">Valor por extenso</label>
-                    <input type="text" id="written-rent-value" class="validate required string" name="written-rent-value" onkeydown="focusNext(event, 'payers-name')">
+                    <input type="text" id="written-rent-value" class="validate required string" name="written-rent-value" value="Teste">
                 </div>
 
                 <div class="form-group">                        
                     <label for="payers-name">Nome do pagante</label>
-                    <input type="text" id="payers-name" class="validate required string" name="payers-name" onkeydown="focusNext(event, 'company-name')">
+                    <input type="text" id="payers-name" class="validate required string" name="payers-name" value="Teste">
                 </div>
 
                 <div class="form-group">                    
                     <label for="company-name">Nome da empresa</label>
-                    <input type="text" id="company-name" class="validate required string" name="company-name" onkeydown="focusNext(event, 'city-name')">
+                    <input type="text" id="company-name" class="validate required string" name="company-name" value="Teste">
                 </div>
 
                 <div class="form-group">                    
                     <label for="city-name">Cidade</label>
-                    <input type="text" id="city-name" class="validate required string" name="city-name" onkeydown="focusNext(event, 'initial-date')">
+                    <input type="text" id="city-name" class="validate required string" name="city-name" value="Teste">
                 </div>
 
                 <div class="form-group">                    
                     <label for="initial-date">Data inicial</label>
-                    <input type="date" id="initial-date" class="required" name="initial-date" onkeydown="focusNext(event, 'owners-name-1')">
+                    <input type="date" id="initial-date" class="required" name="initial-date" value="2024-01-01">
                 </div>
                 
             </fieldset>
@@ -76,54 +76,54 @@
 
                 <div class="form-group">
                     <label for="owners-name-1">Primeiro nome</label>
-                    <input type="text" id="owners-name-1" class="validate required string" name="owners-name-1" onkeydown="focusNext(event, 'owners-phone-1')">
+                    <input type="text" id="owners-name-1" class="validate required string" name="owners-name-1" value="Teste">
                 </div>
     
                 <div class="form-group">
                     <label for="owners-phone-1">Primeiro telefone</label>
-                    <input type="tel" id="owners-phone-1" class="validate required" name="owners-phone-1" maxlength="15" onkeydown="focusNext(event, 'owners-name-2')" oninput="formatPhoneNumber(event)">
+                    <input type="tel" id="owners-phone-1" class="validate required" name="owners-phone-1" maxlength="15">
                 </div>
                 
                 <div class="form-group">
                     <label for="owners-name-2">Segundo nome</label>
-                    <input type="text" id="owners-name-2" class="validate string" name="owners-name-2" onkeydown="focusNext(event, 'owners-phone-2')">
+                    <input type="text" id="owners-name-2" class="validate string" name="owners-name-2" value="Teste">
                 </div>
     
                 <div class="form-group">
                     <label for="owners-phone-2">Segundo telefone</label>
-                    <input type="tel" id="owners-phone-2" name="owners-phone-2" maxlength="15" onkeydown="focusNext(event, 'owners-name-3')" oninput="formatPhoneNumber(event)">
+                    <input type="tel" id="owners-phone-2" name="owners-phone-2" maxlength="15">
                 </div>
         
                 <div class="form-group">
                     <label for="owners-name-3">Terceiro nome</label>
-                    <input type="text" id="owners-name-3" class="validate string" name="owners-name-3" onkeydown="focusNext(event, 'owners-phone-3')">
+                    <input type="text" id="owners-name-3" class="validate string" name="owners-name-3" value="Teste">
                 </div>
         
                 <div class="form-group">
                     <label for="owners-phone-3">Terceiro telefone</label>
-                    <input type="tel" id="owners-phone-3" name="owners-phone-3" maxlength="15" onkeydown="focusNext(event, 'cover-colour')" oninput="formatPhoneNumber(event)">
+                    <input type="tel" id="owners-phone-3" name="owners-phone-3" maxlength="15">
                 </div>
         
                 <div class="form-group colour-group">
                     <label for="cover-colour">Cor de fundo da capa</label>
-                    <input type="color" id="cover-colour" class="validate colour" name="cover-colour" onkeydown="focusNext(event, 'underline-cover-colour')">
+                    <input type="color" id="cover-colour" class="validate colour" name="cover-colour" value="#00FFFF">
                 </div>
         
                 <div class="form-group colour-group">
                     <label for="underline-cover-colour">Cor do sublinhado</label>
-                    <input type="color" id="underline-cover-colour" name="underline-cover-colour" onkeydown="focusNext(event, 'submit-button')">
+                    <input type="color" id="underline-cover-colour" name="underline-cover-colour" value="#FF0000">
                 </div>
             </fieldset>
         </form>
 
-        <button type="submit" id="submit-button" onkeydown="main()" onclick="main()">Gerar recibos</button>
+        <button type="submit" id="submit-button">Gerar recibos</button>
     
     </section>
 
     <section class="receipts-container"></section>
     <section class="buttons-container"></section>
 
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 
 </body>
 </html>
