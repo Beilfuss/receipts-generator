@@ -1,0 +1,88 @@
+.switch-container {
+  position: relative;
+  display: inline-block;
+  width: 3.75em; /* largura do slider */
+  height: 2.125em; /* altura do slider */
+}
+
+.switch-container input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Ensure the checkbox is above the slider */
+}
+
+.switch-container .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 1; /* Ensure the slider is below the checkbox */
+}
+
+.switch-container .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625em;
+  width: 1.625em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch-container input:checked + .slider {
+  background-color: #000;
+}
+
+.switch-container input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.switch-container input:checked + .slider:before {
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
+}
+
+/* Rounded sliders */
+.switch-container .slider.round {
+  border-radius: 2.125em;
+}
+
+.switch-container .slider.round:before {
+  border-radius: 50%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .switch-container {
+    width: 3em; /* Adjust width for smaller screens */
+    height: 1.75em; /* Adjust height for smaller screens */
+  }
+
+  .switch-container .slider:before {
+    height: 1.25em;
+    width: 1.25em;
+    left: 0.25em;
+    bottom: 0.25em;
+  }
+
+  .switch-container input:checked + .slider:before {
+    -webkit-transform: translateX(1.5em);
+    -ms-transform: translateX(1.5em);
+    transform: translateX(1.5em);
+  }
+
+  .switch-container .slider.round {
+    border-radius: 1.75em;
+  }
+}

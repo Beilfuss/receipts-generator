@@ -16,6 +16,7 @@
         rel="stylesheet"
     >
     <link rel="stylesheet" href="./assets/css/form.css" id="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/switch.css" id="stylesheet"/>
 </head>
 <body>
     
@@ -26,17 +27,34 @@
         </header>
     
         <form action="" class="receipt-data-form">
+            <fieldset>
+                <legend><h2>Detalhes do recibo</h2></legend>
+
+                <div class="form-group">
+                    <label for="receipts-quantity">Quantidade de recibos</label>
+                    <input type="number" id="receipts-quantity" class="validate required number" name="receipts-quantity">
+                </div>
+                <div class="form-group">
+                    <label for="receipts-cover" class="switch">Capa</label>
+                    <div class="switch-container">
+                        <input type="checkbox" id="receipts-cover-checkbox" class="" name="receipts-cover" checked>
+                        <span class="slider round"></span>
+                    </div>
+                </div>
+
+            </fieldset>
+
             <fieldset class="receipt-data-form-fieldset">
                 <legend><h2>Dados do recibo</h2></legend>
 
                 <div class="form-group">
                     <label for="receipt-number-id">Número identificador do recibo</label>
-                    <input type="text" id="receipt-number-id" class="validate required number" name="receipt-number-id" value="10">
+                    <input type="text" id="receipt-number-id" class="validate required number" name="receipt-number-id">
                 </div>
 
                 <div class="form-group">                    
                     <label for="building-number">Número do Galpão</label>
-                    <input type="text" id="building-number" class="validate required" name="building-number" value="10">
+                    <input type="text" id="building-number" class="validate required" name="building-number">
                 </div>
     
                 <div class="form-group">
@@ -46,27 +64,27 @@
     
                 <div class="form-group">
                     <label for="written-rent-value">Valor por extenso</label>
-                    <input type="text" id="written-rent-value" class="validate required string" name="written-rent-value" value="Teste">
+                    <input type="text" id="written-rent-value" class="validate required string" name="written-rent-value">
                 </div>
 
                 <div class="form-group">                        
                     <label for="payers-name">Nome do pagante</label>
-                    <input type="text" id="payers-name" class="validate required string" name="payers-name" value="Teste">
+                    <input type="text" id="payers-name" class="validate required string" name="payers-name">
                 </div>
 
                 <div class="form-group">                    
                     <label for="company-name">Nome da empresa</label>
-                    <input type="text" id="company-name" class="validate required string" name="company-name" value="Teste">
+                    <input type="text" id="company-name" class="validate required string" name="company-name">
                 </div>
 
                 <div class="form-group">                    
                     <label for="city-name">Cidade</label>
-                    <input type="text" id="city-name" class="validate required string" name="city-name" value="Teste">
+                    <input type="text" id="city-name" class="validate required string" name="city-name">
                 </div>
 
                 <div class="form-group">                    
                     <label for="initial-date">Data inicial</label>
-                    <input type="date" id="initial-date" class="required" name="initial-date" value="2024-01-01">
+                    <input type="date" id="initial-date" class="required" name="initial-date">
                 </div>
                 
             </fieldset>
@@ -76,7 +94,7 @@
 
                 <div class="form-group">
                     <label for="owners-name-1">Primeiro nome</label>
-                    <input type="text" id="owners-name-1" class="validate required string" name="owners-name-1" value="Teste">
+                    <input type="text" id="owners-name-1" class="validate required string" name="owners-name-1">
                 </div>
     
                 <div class="form-group">
@@ -86,7 +104,7 @@
                 
                 <div class="form-group">
                     <label for="owners-name-2">Segundo nome</label>
-                    <input type="text" id="owners-name-2" class="validate string" name="owners-name-2" value="Teste">
+                    <input type="text" id="owners-name-2" class="validate string" name="owners-name-2">
                 </div>
     
                 <div class="form-group">
@@ -96,7 +114,7 @@
         
                 <div class="form-group">
                     <label for="owners-name-3">Terceiro nome</label>
-                    <input type="text" id="owners-name-3" class="validate string" name="owners-name-3" value="Teste">
+                    <input type="text" id="owners-name-3" class="validate string" name="owners-name-3">
                 </div>
         
                 <div class="form-group">
@@ -106,12 +124,12 @@
         
                 <div class="form-group colour-group">
                     <label for="cover-colour">Cor de fundo da capa</label>
-                    <input type="color" id="cover-colour" class="validate colour" name="cover-colour" value="#00FFFF">
+                    <input type="color" id="cover-colour" class="validate colour" name="cover-colour">
                 </div>
         
                 <div class="form-group colour-group">
                     <label for="underline-cover-colour">Cor do sublinhado</label>
-                    <input type="color" id="underline-cover-colour" name="underline-cover-colour" value="#FF0000">
+                    <input type="color" id="underline-cover-colour" name="underline-cover-colour">
                 </div>
             </fieldset>
         </form>

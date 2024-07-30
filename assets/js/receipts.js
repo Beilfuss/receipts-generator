@@ -209,7 +209,7 @@ function createReceiptContainer(){
     return receiptContainer;
 }
 
-function generateDates(initialDate) {
+function generateDates(initialDate, receiptsQuantity) {
 
     let year = parseInt(initialDate.slice(0, 5));
     let month = parseInt(initialDate.slice(5, 7));
@@ -227,7 +227,7 @@ function generateDates(initialDate) {
     let receiptInitialDate;
     let receiptFinalDate;
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < receiptsQuantity; i++) {
 
         if (month > 12) {
             month = 1;
@@ -253,9 +253,12 @@ function generateDates(initialDate) {
 
 export default function generateReceipts(receiptsContainer, data) {
 
-    const dates = generateDates(data['initial-date']);
+    const initialDate = data['initial-date'];
+    const receiptsQuantity = data['receipts-quantity'];
 
-    for (let i = 0; i < 12; i++) {
+    const dates = generateDates(initialDate, receiptsQuantity);
+
+    for (let i = 0; i < receiptsQuantity; i++) {
         const receiptContainer = createReceiptContainer();
 
         const receiptSummary = createReceiptSummary((i + 1), data, dates[i]);

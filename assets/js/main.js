@@ -132,6 +132,19 @@ function focusNext(e, nextElementId) {
     }
 }
 
+function deactivateReceiptsCover() {
+    const coverInputs = document.querySelector('.receipt-data-cover-fieldset').querySelectorAll('input');
+    if (!this.checked) {
+        for (let i = 0; i < coverInputs.length; i++) {
+            coverInputs[i].disabled = true;
+        }
+    } else {
+        for (let i = 0; i < coverInputs.length; i++) {
+            coverInputs[i].disabled = false;
+        }
+    }
+}
+
 const form = document.querySelector('.receipt-data-form');
 
 document.getElementById('submit-button').addEventListener('click', main);
@@ -147,6 +160,7 @@ for (let i = 0; i < inputs.length; i++) {
 }
 
 document.getElementById('rent-value').addEventListener('input', formatMoneyValue);
+document.getElementById('receipts-cover-checkbox').addEventListener('change', deactivateReceiptsCover);
 
 for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].id.includes('phone')) {
@@ -168,8 +182,10 @@ function main() {
     
         const receiptsContainer = document.querySelector('.receipts-container');
         generateReceipts(receiptsContainer, data);
-    
-        generateCover(receiptsContainer, data);
+
+        if (data['receipts-cover'] === 'on') {
+            generateCover(receiptsContainer, data);
+        }
     
         const buttonsContainer = document.querySelector('.buttons-container');
         createBackButton(buttonsContainer);

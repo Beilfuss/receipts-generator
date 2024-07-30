@@ -22,7 +22,7 @@ export default function validateData(form){
     }
 
     for(let field of form.querySelectorAll('.required')) {
-        if (!field.value) {
+        if (!field.value && !field.disabled) {
             createError(field, "Campo obrigatório");
             valid = false;
         }
@@ -40,7 +40,7 @@ export default function validateData(form){
                 valid = false;
             }
         } else if (field.classList.contains('colour')) {
-            if (field.value === "#000000") {
+            if (field.value === "#000000" && !field.disabled) {
                 createError(field, "Campo obrigatório");
                 valid = false;
             }

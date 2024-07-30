@@ -1,6 +1,6 @@
 # Receipts Generator
 
-A simple receipt generator for 12 month contracts, created to help a very special friend and to practice coding. You can try the system at [this link](https://receipts-generator-mb.netlify.app/).
+A simple rental agreement receipt generator, created to help a very special friend and practice coding. You can try the system at [this link](https://receipts-generator-mb.netlify.app/).
 
 ## Further explanations
 
@@ -18,5 +18,5 @@ Improvements are already being developed. Feel free to contribute, especially wi
 
 ## To-do list
 
-- Make it possible to create a specific quantity of receipts;
+- Make it possible to create a receipt for a specific reason;
 - Use a JS library to print PDFs so that the app works on smartphones.
